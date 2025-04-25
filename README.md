@@ -118,6 +118,8 @@ I also produce a [stream of tools](https://readwithai.substack.com/p/my-producti
 
 You can follow me on [X](https://x.com/readwithai) where I post about this sort of tools and many other things. You can subscribe, or read, my [blog](https://readwithai.substack.com/) where I write about research and reading tools.
 
+You might like to read some of my [writing about note taking in Obsidian](https://readwithai.substack.com/p/note-taking-with-obsidian-much-of).
+
 
 ## Notes
 [*] Unfortunately ghostty seems to be [childishly and poorly managed](https://x.com/readwithai/status/1910398678306865269). If you care about good open and non-authoritarian control of projects you should pick on of the other good terminals which support the graphical terminal protocol
