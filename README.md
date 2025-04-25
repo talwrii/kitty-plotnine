@@ -69,7 +69,12 @@ If we plot using JSONL data then we can use column names
 ```
 curl https://pypistats.org/api/packages/gh-views/overall | jq '.data | .[]' -rc | k-nine 'aes(x="date", y="downloads", group="category", color="category") + geom_line()'
 ```
-Here we fetch downlad statistics for a package on pypi and group the data by category (so that we have multiple lines - one for each category). We also change the color based on category. We use jq to extract data and convert the data in JSONL use `.[]` and `-rc`.
+Here we fetch download statistics for a package on pypi and group the data by category (so that we have multiple lines - one for each category). We also change the color based on category. We use jq to extract data and convert the data in JSONL use `.[]` and `-rc`.
+
+This is a similar plot but we group (facet) data into different plots based on the system:
+```
+curl https://pypistats.org/api/packages/django/system | jq '.data | .[]' -rc | k-nine 'aes(x="date", y="downloads", group="category", color="category") + facet_grid("category") + geom_line()'
+```
 
 Plotnine is quite a large library and we are not going to be able to completely populate it here, but and [introduction is provided](#plotnine-intro). To help quickly find and re-remember functionality some command-line options are provided to query plotline.
 
@@ -106,14 +111,16 @@ Do not use unknown data to generate the expression used in `k-nine`. This expres
 ## An introduction to the Grammar of Graphics
 This library is a thin wrapper around the python [plotnine](https://plotnine.org/) library. Unfortunately, likely owing to the fact that plotnine is a reimplementation of [ggplot2](https://ggplot2.tidyverse.org/) which is a broadly understood tool, the *introductory* documentation for plotnine is not very complete. So I shall offer a small introduction here. You may prefer to review the [ggplot2 documentation](https://ggplot2.tidyverse.org/).
 
-The basic idea of the graphics of grammar is to try to produce graphs in a very expressive way. Separate aspects of plotting and represented by different expressions and then these expressions are combined with the `+` symbol.
+The basic idea of the graphics of grammar is to try to produce graphs in a very expressive way. Separate aspects of plotting are represented by different expressions and then these expressions are combined with the `+` symbol like a mathematical formula.
 
-Properties of plotting are:
+Here are some aspects of plotting handled by plotnine and elements which handle them.
 
-* Loading of data (this handled by `k-nine`, but if you use the library directly this is handled by the  `ggplot` element)
-* The mapping of data to graphical properties such as poistion or color referred to as `geom_aes`.
-* The grouping of data plotted on the same line. Represented by `group` in the `geom_aes` mapping
-* The faceting of data to different plots (e.g. `facet_grid`)
+* Loading of data (this handled by `k-nine`, but if you use the library directly this is handled by the  [ggplot](https://plotnine.org/reference/ggplot.html) element)
+* The [mapping of data to graphical features](https://plotnine.org/reference/#mapping-aesthetics) such as position or color is controlled by the  [aes](https://plotnine.org/reference/aes.html) element.
+* The grouping of data to plotted on the same line or using is the same process is represented by the `group` parameter whem mapping with [aes](https://plotnine.org/reference/aes.html)
+* [How the mapped data is drawn](https://plotnine.org/reference/#geoms) - referred to as geoms.
+* ["Faceting" of data](https://plotnine.org/reference/#facets) where data is sent to a  number of  different (e.g. one for each year). And example of faceting is the [facet grid](https://plotnine.org/reference/facet_grid.html) element
+* Other features
 
 ## Caveats and missing features
 * I haven't implemented code to save the plot yet.

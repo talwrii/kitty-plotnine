@@ -170,6 +170,8 @@ def main():
                 webbrowser.open(url)
                 return
 
+
+        element, = args.expression
         print(eval(element, vars(plotnine)).__doc__)
         return
 
