@@ -110,7 +110,7 @@ Properties of plotting are:
 
 
 ## About me
-<img align="left" src="./rwai-log.png"></img>
+<img align="left" src="./rwai-logo.png"></img>
 
 I am **@readwithai**. I make tools for reading, research and agency sometimes using the markdown editor Obsidian.
 
