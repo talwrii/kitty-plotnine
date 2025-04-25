@@ -2,14 +2,14 @@ import setuptools
 
 setuptools.setup(
     name='kitty-plotnine',
-    version=0.1,
-    author='readwithai',
+    version="0.1.0",
+    author='@readwithai',
     long_description_content_type='text/markdown',
     author_email='Email',
-    description='',
+    description='Plot from the command-line with one-liners. Render plots in-line',
     license='GPLv3',
-    keywords='',
-    url='',
+    keywords='kitty,terminal,plot,plotting',
+    url='https://github.com/talwrii/kitty-plotnine',
     packages=["kitty_plotnine"],
     install_requires=[
         "plotnine",
@@ -19,7 +19,5 @@ setuptools.setup(
     entry_points={
         'console_scripts': ['k-nine=kitty_plotnine.main:main']
     },
-    classifiers=[
-    ],
     test_suite='nose.collector'
 )
