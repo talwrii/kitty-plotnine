@@ -5,6 +5,9 @@ Plot graphs directly in the terminal with shell one-liners.
 
 Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
 
+## Demo
+![demo](./demo.png)
+
 ## Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
 You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
