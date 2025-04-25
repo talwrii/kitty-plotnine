@@ -5,6 +5,8 @@ Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf)
 
 This readme is under development!
 
+![logo](logo.png)
+
 # Motivation
 You probably don't want to do this. Start up `jupyter`, use `subprocess.check_output` to fetch some data and proceed to do analysis in the normal way in jupyter keeping track of everything your have done and doing a bit of analysis. But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't you like to see help inline.
 
