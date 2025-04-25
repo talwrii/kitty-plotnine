@@ -5,9 +5,6 @@ Plot graphs directly in the terminal with shell one-liners.
 
 Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
 
-## Demo
-![demo](./demo.png)
-
 ## Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
 You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
@@ -28,6 +25,11 @@ There are other tools that can be run from the command-line and plot in another 
 
 ## Attribution
 This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library and [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty) libraries. Plotnine is turn a reimplementation of [ggplot2](https://github.com/tidyverse/ggplot2) which was influenced by the somewhat philosophical book [A Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0). The existence of this tool is dependent on the Terminal Graphics Protocol which was pioneered by [kitty](https://github.com/kovidgoyal/kitty) as in improvement to sixel-based libraries.
+
+## Demo
+![demo](./demo.png)
+
+
 
 ## Installation
 You can install k-nine using [pipx](https://github.com/pypa/pipx) with:
