@@ -1,4 +1,4 @@
-# kitty plotnine (k-nine) 😺😸😹😻😼😽😾🐱🐶
+# kitty plotnine (k-nine) 🐶😺😸😹😻😼😽😾🐱
 Plot graphs directly in the terminal with shell one-liners.
 
 
