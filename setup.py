@@ -2,10 +2,10 @@ import setuptools
 
 setuptools.setup(
     name='kitty-plotnine',
-    version="0.1.0",
+    version="0.1.1",
     author='@readwithai',
     long_description_content_type='text/markdown',
-    author_email='Email',
+    author_email='talwrii@gmail.com',
     description='Plot from the command-line with one-liners. Render plots in-line',
     license='GPLv3',
     keywords='kitty,terminal,plot,plotting',
