@@ -110,13 +110,13 @@ Properties of plotting are:
 
 
 ## About me
+<img align="left" src="./rwai-log.png"></img>
+
 I am **@readwithai**. I make tools for reading, research and agency sometimes using the markdown editor Obsidian.
 
 I also produce a [stream of tools](https://readwithai.substack.com/p/my-productivity-tools) related to this work.
 
 You can follow me on [X](https://x.com/readwithai) where I post about this sort of tools and many other things. You can subscribe, or read, my [blog](https://readwithai.substack.com/) where I write about research and reading tools.
-
-
 
 
 ## Notes
