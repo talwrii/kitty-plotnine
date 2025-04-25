@@ -1,12 +1,13 @@
 # kitty plotnine (k-nine)
 **@readwithai** - [X](https://x.com/readwithai) - [blog](https://readwithai.substack.com/) - [machine-aided reading](https://www.reddit.com/r/machineAidedReading/)
+
 Plot graphs directly in the terminal with shell one-liners.
 
 Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
 
 This readme is under development!
 
-# Motivation
+## Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
 You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
@@ -14,7 +15,7 @@ But isn't that just so much *effort*; doesn't the browser suck with all the clic
 
 A number of terminals including KDE's Konsole, kitty and wezterm (and ghostty which you should not use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the render images directly under the commands that generate them within your terminal and scroll back to see earlier pictures.
 
-# Alternatives and prior work
+## Alternatives and prior work
 This tool combines three properties. Being able to plot from the terminal with a "one-liner" - a shell expression written in one line; being able to plot in high resolution in the terminal; being trivial to install and use . In this regard, I believe this tool is unique but the components which it comprises of are not.
 
 I could not find any other command-line plotting tools aimed at the graphics terminal protocol. There are many command-line libraries to produce this output. I am using
@@ -24,10 +25,17 @@ There are other approaches to rendering graphics within the terminal than the gr
 
 There are other tools that can be run from the command-line and plot in another window. [gnuplot](https://jasonmurray.org/posts/2020/basicgnuplot/) can plot from the command-line (rendering in a GUI window ) but the syntax is not terribly succinct nor easy to remember.  [sparklines](https://github.com/deeplook/sparklines) with produce a spark-line, these are very succinct plots that are good at showing the rate of change.
 
-# Attribution
+## Attribution
 This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library and [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty) libraries. Plotnine is turn a reimplementation of [ggplot2](https://github.com/tidyverse/ggplot2) which was influenced by the somewhat philosophical book [A Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0). The existence of this tool is dependent on the Terminal Graphics Protocol which was pioneered by [kitty](https://github.com/kovidgoyal/kitty) as in improvement to sixel-based libraries.
 
-# Usage 🐶😺😸😹😻😼😽😾🐱
+## Installation
+You can install k-nine using [pipx](https://github.com/pypa/pipx) with:
+
+```
+pipx install kitty-plotnine
+```
+
+## Usage 🐶😺😸😹😻😼😽😾🐱
 Make sure your terminal supports the [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/). If you are using tmux (and potentially other terminal multiplexers) you need to use a terminal which supports "unicode placeholder characters". At the time of writing the only usable terminal emulator seems to be kitty (ghostty supports this feature - but should not be used). If you are not using a terminal multiplexer and of kitty, wezterm or konsole would work (or ghostty - which you shoiuld not use).
 
 You can test you terminal with the following command (assuming you have `ffmpeg` and `timg` installed):
