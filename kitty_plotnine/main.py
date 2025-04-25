@@ -5,6 +5,8 @@ import json
 import os
 import re
 import sys
+import webbrowser
+
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -119,8 +121,9 @@ ninety_nine
 
 
 PARSER = argparse.ArgumentParser(description='Plot data directly in the shell')
-PARSER.add_argument("--doc", help="Show the document for this graphical element")
+PARSER.add_argument("--doc", action='store_true', help="Show the document for this graphical element")
 PARSER.add_argument("--list", action='store_true', help="List all graphical elements")
+PARSER.add_argument("--web", action='store_true', help="List all graphical elements")
 PARSER.add_argument("expression", help="plotnine graphics of grammar expression", nargs="*")
 
 
@@ -154,7 +157,20 @@ def main():
         return
 
     if args.doc:
-        print(eval(args.doc, vars(plotnine)).__doc__)
+        if args.web:
+            if not args.expression:
+                webbrowser.open('https://plotnine.org/reference/')
+                return
+            else:
+                element, = args.expression
+                if element not in vars(plotnine):
+                    raise Exception(f'{element} is not a graphical element')
+
+                url = f'https://plotnine.org/reference/{element}.html'
+                webbrowser.open(url)
+                return
+
+        print(eval(element, vars(plotnine)).__doc__)
         return
 
     lines = sys.stdin.read().splitlines()
