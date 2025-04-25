@@ -8,12 +8,11 @@ This readme is under development!
 
 # Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
-You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
+You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
-But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
+But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
 
-A number of terminals including KDE's Konsole, kitty and wezterm (and ghostty which would shouldn't use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can read output from shells and scroll back to early graphs.
-
+A number of terminals including KDE's Konsole, kitty and wezterm (and ghostty which you should not use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the render images directly under the commands that generate them within your terminal and scroll back to see earlier pictures.
 
 # Alternatives and prior work
 This tool combines three properties. Being able to plot from the terminal with a "one-liner" - a shell expression written in one line; being able to plot in high resolution in the terminal; being trivial to install and use . In this regard, I believe this tool is unique but the components which it comprises of are not.
@@ -21,12 +20,12 @@ This tool combines three properties. Being able to plot from the terminal with a
 I could not find any other command-line plotting tools aimed at the graphics terminal protocol. There are many command-line libraries to produce this output. I am using
 [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one of kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
 
-There are other approaches to rendering graphics within the terminal than the graphics terminal protocol, but these are of a lower resolution. These tend to use characters to represent graphical components. One such exapmle is the [sixel](https://github.com/saitoha/libsixel) library.
+There are other approaches to rendering graphics within the terminal than the graphics terminal protocol, but these are of a lower resolution. These tend to use characters to represent graphical components. One such example is the [sixel](https://github.com/saitoha/libsixel) library.
 
-There are other tools that can be run from the command-line and plot in another window. [gnuplot](https://jasonmurray.org/posts/2020/basicgnuplot/) can plot from the command-line (rendering in an X) but the syntax is not terribly succinct. [sparklines](https://github.com/deeplook/sparklines) with produce a spark-line, these are very succinct plots that are good at showing the rate of change.
+There are other tools that can be run from the command-line and plot in another window. [gnuplot](https://jasonmurray.org/posts/2020/basicgnuplot/) can plot from the command-line (rendering in a GUI window ) but the syntax is not terribly succinct nor easy to remember.  [sparklines](https://github.com/deeplook/sparklines) with produce a spark-line, these are very succinct plots that are good at showing the rate of change.
 
 # Attribution
-This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library and [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty) libraries. Plotnine is turn a reimplementation of [ggplot2](https://github.com/tidyverse/ggplot2) which was influenced by the somewhat philosophical book a [Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0). The existence of this tool is dependent on the Terminal graphics protocol which was pioneered by [kitty](https://github.com/kovidgoyal/kitty) as in improvement to sixel based libraries.
+This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library and [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty) libraries. Plotnine is turn a reimplementation of [ggplot2](https://github.com/tidyverse/ggplot2) which was influenced by the somewhat philosophical book [A Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0). The existence of this tool is dependent on the Terminal Graphics Protocol which was pioneered by [kitty](https://github.com/kovidgoyal/kitty) as in improvement to sixel-based libraries.
 
 # Usage 🐶😺😸😹😻😼😽😾🐱
 Make sure your terminal supports the [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/). If you are using tmux (and potentially other terminal multiplexers) you need to use a terminal which supports "unicode placeholder characters". At the time of writing the only usable terminal emulator seems to be kitty (ghostty supports this feature - but should not be used). If you are not using a terminal multiplexer and of kitty, wezterm or konsole would work (or ghostty - which you shoiuld not use).
@@ -39,7 +38,7 @@ ffmpeg -filter_complex "color=purple, drawtext=text=k-nine:fontsize=h" -frames:v
 
 ```
 
-k-nine read input from standard in in a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to redner data.
+k-nine read input from standard in in a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to render data.
 
 The following creates a histogram from the numbers 1 to 100.
 ```
@@ -92,8 +91,8 @@ Do not use unknown data to generate the expression used in `k-nine`. This expres
 
 
 <a name="plotnine-intro"> </a>
-## An introduction to the Graphics of Grammer
-This library is a thin wrapper around the python [plotnine](https://plotnine.org/) library. Unfortunately, likely owing to the fact that plotnine is a reimplementation of [ggplot2](https://ggplot2.tidyverse.org/) which is a broadly understood tool, the *introductory* documentation for plotnine is not very complete. So I shall offer a small introduciton here. You may prefer to review the [ggplot2 documentation](https://ggplot2.tidyverse.org/).
+## An introduction to the Grammar of Graphics
+This library is a thin wrapper around the python [plotnine](https://plotnine.org/) library. Unfortunately, likely owing to the fact that plotnine is a reimplementation of [ggplot2](https://ggplot2.tidyverse.org/) which is a broadly understood tool, the *introductory* documentation for plotnine is not very complete. So I shall offer a small introduction here. You may prefer to review the [ggplot2 documentation](https://ggplot2.tidyverse.org/).
 
 The basic idea of the graphics of grammar is to try to produce graphs in a very expressive way. Separate aspects of plotting and represented by different expressions and then these expressions are combined with the `+` symbol.
 
