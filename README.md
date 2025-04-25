@@ -42,9 +42,14 @@ k-nine read input from standard in in a number of formats and attempts convert t
 
 
 The following creates a histogram from the numbers 1 to 100.
-
 ```
 seq 100 | k-nine 'aes(x="one") + geom_histogram(bins=12)'
+```
+Note how we use the string "one" to refer to the first column when we have no headings.
+
+To create a scatter plot
+```
+paste <(seq 100) <(seq 100 -1 1) | k-nine 'aes(x="one", y="two") + geom_point()'
 ```
 
 
