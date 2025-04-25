@@ -1,7 +1,7 @@
 # kitty plotnine (k-nine)
 Plot graphs directly in the terminal with shell one-liners.
 
-<img alt="Logo" src="./logo-small.png" style="float:right"/>
+<img alt="Logo" src="./logo-small.png" align="right"/>
 
 Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's terminal graphics protocol.
 
