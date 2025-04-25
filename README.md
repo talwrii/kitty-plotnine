@@ -1,19 +1,17 @@
-# kitty plotnine (k-nine) 🐶😺😸😹😻😼😽😾🐱
+# kitty plotnine (k-nine)
 Plot graphs directly in the terminal with shell one-liners.
 
-
-Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's terminal graphics protocol.
+Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
 
 This readme is under development!
 
-
 # Motivation
 <img alt="Logo" src="./logo-small.png" align="right"/>
-You probably don't want to do this. Start up `jupyter`, use `subprocess.check_output` to fetch some data and proceed to do analysis in the normal way in jupyter keeping track of everything your have done and doing a bit of analysis. But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't you like to see help inline.
+You probably don't want to do this. Start up [jupyter](), use **subprocess.check_output** to fetch some data from your process process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
-If you are are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
+But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
 
-A number of terminals including KDE's Konsole, kitty, wezterm, and  ghostty (you should not use ghostty for a few reasons (*)) now support graphics in the browser. You can use these to create images directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can read output from shells and scroll back to early graphs.
+A number of terminals including KDE's Konsole, kitty and wezterm (and ghostty which would shouldn't use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can read output from shells and scroll back to early graphs.
 
 
 # Alternatives and prior work
@@ -26,7 +24,10 @@ There are other approaches to rendering graphics within the terminal than the gr
 
 There are other tools that can be run from the command-line and plot in another window. [gnuplot](https://jasonmurray.org/posts/2020/basicgnuplot/) can plot from the command-line (rendering in an X) but the syntax is not terribly succinct. [sparklines](https://github.com/deeplook/sparklines) with produce a spark-line, these are very succinct plots that are good at showing the rate of change.
 
-# Usage
+# Attribution
+This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library and [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty) libraries. Plotnine is turn a reimplementation of [ggplot2](https://github.com/tidyverse/ggplot2) which was influenced by the somewhat philosophical book a [Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0). The existence of this tool is dependent on the Terminal graphics protocol which was pioneered by [kitty](https://github.com/kovidgoyal/kitty) as in improvement to sixel based libraries.
+
+# Usage 🐶😺😸😹😻😼😽😾🐱
 Make sure your terminal supports the [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/). If you are using tmux (and potentially other terminal multiplexers) you need to use a terminal which supports "unicode placeholder characters". At the time of writing the only usable terminal emulator seems to be kitty (ghostty supports this feature - but should not be used). If you are not using a terminal multiplexer and of kitty, wezterm or konsole would work (or ghostty - which you shoiuld not use).
 
 You can test you terminal with the following command (assuming you have `ffmpeg` and `timg` installed):
