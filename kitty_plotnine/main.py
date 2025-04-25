@@ -157,16 +157,21 @@ def main():
         print(eval(args.doc, vars(plotnine)).__doc__)
         return
 
-
     lines = sys.stdin.read().splitlines()
     if lines[0].startswith("{"):
         data = [json.loads(l) for l in lines]
         data = pd.DataFrame(data)
-    else:
+    elif "," in lines[0]:
         data = list(csv.reader(lines))
         data = [[maybe_number(c) for c in r] for r in data]
         ncol = len(data[0])
         data = pd.DataFrame(data, columns=NUMBERS[:ncol])
+    else:
+        data = [line.split() for line in lines]
+        data = [[maybe_number(c) for c in r] for r in data]
+        ncol = len(data[0])
+        data = pd.DataFrame(data, columns=NUMBERS[:ncol])
+
 
     def is_datetime(x):
         try:
