@@ -32,7 +32,7 @@ This tool is a thin wrapper around the [plotnine](https://plotnine.org/) library
 
 
 ## Installation
-You can install k-nine using [pipx](https://github.com/pypa/pipx) with:
+You can install `k-nine` using [pipx](https://github.com/pypa/pipx) with:
 
 ```
 pipx install kitty-plotnine
@@ -49,7 +49,7 @@ ffmpeg -filter_complex "color=purple, drawtext=text=k-nine:fontsize=h" -frames:v
 
 ```
 
-k-nine read input from standard in in a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to render data.
+`k-nine` reads input from standard in in a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to render data.
 
 The following creates a histogram from the numbers 1 to 100.
 ```
