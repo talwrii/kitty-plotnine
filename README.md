@@ -7,14 +7,15 @@ Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf)
 
 ## Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
-You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
+You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use `subprocess.check_output` to fetch some data from your process or script and do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
 But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't you like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with one-line commands.
 
-A number of terminals including KDE's Konsole, kitty and wezterm (and ghostty which you should not use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the render images directly under the commands that generate them within your terminal and scroll back to see earlier pictures.
+A number of terminals including [Kitty](https://github.com/kovidgoyal/kitty), [KDE's Konsole](https://konsole.kde.org/) and [WezTerm](https://wezterm.org/
+) (and ghostty which you should not use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the render images directly under the commands that generate them within your terminal and scroll back to see earlier pictures.
 
 ## Alternatives and prior work
-This tool combines three properties. Being able to plot from the terminal with a "one-liner" - a shell expression written in one line; being able to plot in high resolution in the terminal; being trivial to install and use . In this regard, I believe this tool is unique but the components which it comprises of are not.
+This tool combines three properties: Being able to plot from the terminal with a "one-liner" ; being able to plot in high resolution in the terminal; being trivial to install and use. In this regard, I believe this tool is unique but the components which it comprises of are not.
 
 I could not find any other command-line plotting tools aimed at the graphics terminal protocol. There are many command-line libraries to produce this output. I am using
 [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one of kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
@@ -28,7 +29,6 @@ This tool is a thin wrapper around the [plotnine](https://plotnine.org/) and [ma
 
 ## Demo
 ![demo](./demo.png)
-
 
 
 ## Installation
@@ -99,7 +99,6 @@ k-nine --doc --web
 
 ## Security
 Do not use unknown data to generate the expression used in `k-nine`. This expression is evaluated using Python's eval mechanism. Well you can if you like... but people could potentially use an escaping attack to run arbitrary code.
-
 
 <a name="plotnine-intro"> </a>
 ## An introduction to the Grammar of Graphics
