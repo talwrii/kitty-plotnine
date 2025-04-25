@@ -1,7 +1,6 @@
 # kitty plotnine (k-nine)
 Plot graphs directly in the terminal with shell one-liners.
 
-<img alt="Logo" src="./logo-small.png" align="right"/>
 
 Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's terminal graphics protocol.
 
@@ -9,16 +8,12 @@ This readme is under development!
 
 
 # Motivation
+<img alt="Logo" src="./logo-small.png" align="right"/>
 You probably don't want to do this. Start up `jupyter`, use `subprocess.check_output` to fetch some data and proceed to do analysis in the normal way in jupyter keeping track of everything your have done and doing a bit of analysis. But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't you like to see help inline.
 
 If you are are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
 
 A number of terminals including KDE's Konsole, kitty, wezterm, and  ghostty (you should not use ghostty for a few reasons (*)) now support graphics in the browser. You can use these to create images directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can read output from shells and scroll back to early graphs.
-
-
-
-
-
 
 
 # Alternatives and prior work
