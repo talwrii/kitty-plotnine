@@ -7,8 +7,8 @@ Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf)
 This readme is under development!
 
 # Motivation
-<img alt="Logo" src="./logo-small.png" align="right"/>
-You probably don't want to do this. Start up [jupyter](), use **subprocess.check_output** to fetch some data from your process process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
+<img alt="Logo" src="./logo-small.png" align="right"></img>
+You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use **subprocess.check_output** to fetch some data from your process process to do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
 But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with single commands.
 
