@@ -19,7 +19,7 @@ A number of terminals including [Kitty](https://github.com/kovidgoyal/kitty), [K
 ## Alternatives and prior work
 This tool combines three properties: Being able to plot from the terminal with a "one-liner" ; being able to plot in high resolution in the terminal; being trivial to install and use. In this regard, I believe this tool is quite unique but the components which it comprises of are not.
 
-There are a number of visualisation tools for [kitty](https://sw.kovidgoyal.net/kitty/integrations/#system-and-data-visualisation-tools). The closest to `k-nine` is a wrapper around `gnuplot` which displays output using kitty's internal `icat`. This could easily be adapted to use something cross-terminal like `timg` and timg will fall back to timg based rendering.
+There are a number of visualisation tools for [kitty](https://sw.kovidgoyal.net/kitty/integrations/#system-and-data-visualisation-tools). The closest to `k-nine` is a wrapper around `gnuplot` which displays output using kitty's internal `icat`. This could easily be adapted to use something cross-terminal like `timg` and timg will fall back to sixel-based rendering.
 
 There are many *libraries* to produce this sort of output in kitty. I am using
 [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one oftupjhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEsrpiolikd.ampikort.shrwelp.xertijA1 kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
@@ -53,13 +53,13 @@ ffmpeg -filter_complex "color=purple, drawtext=text=k-nine:fontsize=h" -frames:v
 
 ```
 
-`k-nine` reads input from standard in in a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to render data.
+`k-nine` reads input from standard in supporting a number of formats and attempts convert the data into a useable format. It support CSV, space separated numbers and, JSONL formats. The [jq](https://jqlang.org/) or [npcli](https://pypi.org/project/npcli/) tools may be useful for preparing data for input into `k-nine` since `k-nine` has very limited ability to render data.
 
 The following creates a histogram from the numbers 1 to 100.
 ```
 seq 100 | k-nine 'aes(x="one") + geom_histogram(bins=12)'
 ```
-Note how we use the string "one" to refer to the first column when we have no headings.
+Note how we use the string `"one"` to refer to the first column when we have no headings.
 
 To create a scatter plot we use `+geom_point()` and ensure both `x` and `y` coordinates are populated from the data in `aes`
 
@@ -71,7 +71,7 @@ If we plot using JSONL data then we can use column names
 ```
 curl https://pypistats.org/api/packages/gh-views/overall | jq '.data | .[]' -rc | k-nine 'aes(x="date", y="downloads", group="category", color="category") + geom_line()'
 ```
-Here we fetch download statistics for a package on pypi and group the data by category (so that we have multiple lines - one for each category). We also change the color based on category. We use jq to extract data and convert the data in JSONL use `.[]` and `-rc`.
+Here we fetch download statistics for a package on PyPI and group the data by category (so that we have multiple lines - one for each category). We also change the color based on category. We use `jq` to extract data and convert the data in JSONL use `.[]` and `-rc`.
 
 This is a similar plot but we group (facet) data into different plots based on the system:
 ```
@@ -142,4 +142,4 @@ You might like to read some of my [writing about note taking in Obsidian](https:
 
 
 ## Notes
-[*] Unfortunately ghostty seems to be [childishly and poorly managed](https://x.com/readwithai/status/1910398678306865269). If you care about good open and non-authoritarian control of projects you should pick on of the other good terminals which support the graphical terminal protocol
+[*] Unfortunately ghostty seems to be [childishly and poorly managed](https://x.com/readwithai/status/1910398678306865269). If you care about good open and non-authoritarian control of projects you should pick one of the other good terminals which support the terminal graphics protocol
