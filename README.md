@@ -3,24 +3,26 @@
 
 Plot graphs directly in the terminal with shell one-liners.
 
-Use the [grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
+Use the [Grammar of Graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) library [plotnine](https://plotnine.org/) from the command-line if your terminal supports kitty's [terminal graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
 
-*Note: This project is not affiliated with kitty or plotnine but uses them*
+*Note: This project is not affiliated with kitty or plotnine, but mskes use them*
 
 ## Motivation
 <img alt="Logo" src="./logo-small.png" align="right"></img>
 You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use `subprocess.check_output` to fetch some data from your process or script and do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
-But isn't that just so much *effort*; doesn't the browser suck with all the clicking; wouldn't you like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself you can use this library to do your plotting directly in the shell with one-line commands.
+But isn't that just so much *effort*; doesn't the browser suck with all the *clicking*; wouldn't you like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself, you can use this library to do your plotting directly in the shell with one-line commands.
 
 A number of terminals including [Kitty](https://github.com/kovidgoyal/kitty), [KDE's Konsole](https://konsole.kde.org/) and [WezTerm](https://wezterm.org/
-) (and ghostty which you should not use) now support high definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the render images directly under the commands that generate them within your terminal and scroll back to see earlier pictures.
+) (and Ghostty which you should not use *) now support high-definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the rendered images directly under the commands that generate them within your terminal and scroll back to see earlier images with their associated commands.
 
 ## Alternatives and prior work
-This tool combines three properties: Being able to plot from the terminal with a "one-liner" ; being able to plot in high resolution in the terminal; being trivial to install and use. In this regard, I believe this tool is unique but the components which it comprises of are not.
+This tool combines three properties: Being able to plot from the terminal with a "one-liner" ; being able to plot in high resolution in the terminal; being trivial to install and use. In this regard, I believe this tool is quite unique but the components which it comprises of are not.
 
-I could not find any other command-line plotting tools aimed at the graphics terminal protocol. There are many command-line libraries to produce this output. I am using
-[matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one of kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
+There are a number of visualisation tools for [kitty](https://sw.kovidgoyal.net/kitty/integrations/#system-and-data-visualisation-tools). The closest to `k-nine` is a wrapper around `gnuplot` which displays output using kitty's internal `icat`. This could easily be adapted to use something cross-terminal like `timg` and timg will fall back to timg based rendering.
+
+There are many *libraries* to produce this sort of output in kitty. I am using
+[matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one oftupjhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEsrpiolikd.ampikort.shrwelp.xertijA1 kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
 
 There are other approaches to rendering graphics within the terminal than the graphics terminal protocol, but these are of a lower resolution. These tend to use characters to represent graphical components. One such example is the [sixel](https://github.com/saitoha/libsixel) library.
 
