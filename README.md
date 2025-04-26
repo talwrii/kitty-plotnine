@@ -19,7 +19,7 @@ A number of terminals including [Kitty](https://github.com/kovidgoyal/kitty), [K
 ## Alternatives and prior work
 This tool combines three properties: Being able to plot from the terminal with a "one-liner" ; being able to plot in high resolution in the terminal; being trivial to install and use. In this regard, I believe this tool is quite unique but the components which it comprises of are not.
 
-There are a number of visualisation tools for [kitty](https://sw.kovidgoyal.net/kitty/integrations/#system-and-data-visualisation-tools). The closest to `k-nine` is a wrapper around `gnuplot` which displays output using kitty's internal `icat`. This could easily be adapted to use something cross-terminal like `timg` and timg will fall back to sixel-based rendering.
+There are a [number of visualisation tools for kitty](https://sw.kovidgoyal.net/kitty/integrations/#system-and-data-visualisation-tools). The closest to `k-nine` is a wrapper around `gnuplot` which displays output using kitty's internal `icat`. This could easily be adapted to use something cross-terminal like `timg` and timg will fall back to sixel-based rendering.
 
 There are many *libraries* to produce this sort of output in kitty. I am using
 [matplotlib-backend-kitty](https://github.com/jktr/matplotlib-backend-kitty), [kitcat](https://github.com/mil-ad/kitcat) is an alternative for Python. It would be comparatively simple to produce an image of plot in any language and render it with one oftupjhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEhttps://youtu.be/FpSwnzL1lwc?si=HVchEaSnUlilSEvEsrpiolikd.ampikort.shrwelp.xertijA1 kitty's image programs such as [icat](https://sw.kovidgoyal.net/kitty/kittens/icat/) or [timg](https://github.com/hzeller/timg).
