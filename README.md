@@ -1,5 +1,5 @@
 # kitty plotnine (k-nine)
-**@readwithai** - [X](https://x.com/readwithai) - [blog](https://readwithai.substack.com/) - [machine-aided reading](https://www.reddit.com/r/machineAidedReading/)
+**@readwithai** - [**X**](https://x.com/readwithai) - [**blog**](https://readwithai.substack.com/) - [**machine-aided reading**](https://www.reddit.com/r/machineAidedReading/)
 
 Plot graphs directly in the terminal with shell one-liners.
 
