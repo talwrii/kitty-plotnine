@@ -11,7 +11,7 @@ Use the [Grammar of Graphics](https://vita.had.co.nz/papers/layered-grammar.pdf)
 <img alt="Logo" src="./logo-small.png" align="right"></img>
 You probably don't want to do this. Start up [jupyter](https://jupyter.org/), use `subprocess.check_output` to fetch some data from your process or script and do analysis the normal way in jupyter. It'll keep track of all your history for you, let you rerun commands, write proper python functions, save your output and even make your plots interactive.
 
-But isn't that just so much *effort*; doesn't the browser suck with all the *clicking*; wouldn't you like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself, you can use this library to do your plotting directly in the shell with one-line commands.
+But isn't that just so much *effort*; doesn't the browser suck with all the *clicking*; wouldn't you like to have some nice man pages and be able to press <kbd>C-r</kbd>? If you are sufficiently lazy to want to make some more work for yourself, you can use this tool to do your plotting directly in the shell with one-line commands.
 
 A number of terminals including [Kitty](https://github.com/kovidgoyal/kitty), [KDE's Konsole](https://konsole.kde.org/) and [WezTerm](https://wezterm.org/
 ) (and Ghostty which you should not use *) now support high-definition graphics directly in the terminal. This can be used together with plotnine to plot in the terminal. This has some nice properties, you can see the rendered images directly under the commands that generate them within your terminal and scroll back to see earlier images with their associated commands.
